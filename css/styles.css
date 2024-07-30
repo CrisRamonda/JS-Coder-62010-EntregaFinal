@@ -1,0 +1,485 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERALES */
+* {
+  background-color: #ddcce5;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  list-style: none;
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 600;
+  color: black;
+}
+
+h2, h3 {
+  font-size: x-large;
+  font-weight: 450;
+  color: black;
+}
+
+p, li, a {
+  font-size: medium;
+  font-weight: 400;
+  color: black;
+}
+
+footer {
+  text-align: center;
+  background-color: #dbbfe7;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* ESTILOS NAV */
+nav {
+  z-index: 1;
+  background-color: #dbbfe7;
+}
+nav .navbar-toggler-icon, nav div, nav a, nav ul, nav li, nav .logoNav {
+  background-color: #dbbfe7;
+}
+nav .logoNav {
+  width: 7vh;
+}
+
+/* ESTILOS INICIO */
+.mainInicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 88vh;
+  background-image: url("../images/VeteFrente.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+.mainInicio .sectionInicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+}
+.mainInicio .sectionInicio .divParrafo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3vh;
+  max-width: 80vh;
+  margin-top: 60vh;
+  background-color: #ddcce5;
+  border-radius: 25px;
+  opacity: 0.75;
+}
+.mainInicio .sectionInicio .divParrafo .parrafoInicio {
+  margin: 10px;
+  background-color: transparent;
+}
+
+/* ESTILOS SERVICIOS */
+.mainServicios .tituloServicios {
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+}
+.mainServicios .sectionServicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainServicios .sectionServicios .articleServicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 55vh;
+  margin-bottom: 3vw;
+}
+.mainServicios .sectionServicios .articleServicios:hover {
+  transform: scale(1.05);
+  transition: 0.7s;
+}
+.mainServicios .sectionServicios .articleServicios:not(hover) {
+  transform: scale(1);
+  transition: 0.7s;
+}
+.mainServicios .sectionServicios .articleServicios .fotoServicios {
+  margin: 2vh;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px 1px black;
+  width: 35vh;
+}
+.mainServicios .sectionServicios .articleServicios .divServicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainServicios .sectionServicios .articleServicios .divServicios .subTituloServicios {
+  text-align: center;
+  margin: 1vh;
+}
+.mainServicios .sectionServicios .articleServicios .parrafoServicios {
+  max-width: 35vh;
+}
+
+/* ESTILOS CATEGORIAS */
+.mainCategorias {
+  display: grid;
+}
+.mainCategorias .tituloCategorias {
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+}
+.mainCategorias .sectionCategorias {
+  margin-bottom: 1vw;
+}
+.mainCategorias .sectionCategorias .articleCategorias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+}
+.mainCategorias .sectionCategorias .articleCategorias:hover {
+  transform: scale(1.05);
+  transition: 0.7s;
+}
+.mainCategorias .sectionCategorias .articleCategorias:not(hover) {
+  transform: scale(1);
+  transition: 0.7s;
+}
+.mainCategorias .sectionCategorias .articleCategorias .linkCategorias {
+  text-decoration: none;
+}
+.mainCategorias .sectionCategorias .articleCategorias .linkCategorias .fotoCategorias {
+  margin: 2vh;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px 1px black;
+  width: 35vh;
+}
+.mainCategorias .sectionCategorias .articleCategorias .linkCategorias .subTituloCategorias {
+  text-align: center;
+  margin: 1vh;
+}
+
+/* ESTILOS PRODUCTOS */
+.mainProductos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainProductos .tituloProductos {
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+}
+.mainProductos .instruccionProductos {
+  font-size: x-large;
+  font-weight: 450;
+  color: black;
+  font-style: italic;
+  padding: 1vh;
+}
+.mainProductos .sectionProductos {
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainProductos .sectionProductos .articleProductos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 65vh;
+}
+.mainProductos .sectionProductos .articleProductos:hover {
+  transform: scale(1.05);
+  transition: 0.7s;
+}
+.mainProductos .sectionProductos .articleProductos:not(hover) {
+  transform: scale(1);
+  transition: 0.7s;
+}
+.mainProductos .sectionProductos .articleProductos .fotoProductos {
+  margin: 2vh;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px 1px black;
+  width: 35vh;
+}
+.mainProductos .sectionProductos .articleProductos .subTituloProductos {
+  text-align: center;
+  margin: 1vh;
+  width: 80vw;
+}
+.mainProductos .sectionProductos .articleProductos ul {
+  text-align: left;
+}
+.mainProductos .sectionProductos .articleProductos ul .botonProductos {
+  border-color: black;
+  margin-top: 20px;
+}
+.mainProductos .sectionProductos .articleProductos ul .botonProductos:hover {
+  background-color: #dbbfe7;
+}
+
+/* ESTILOS SIN STOCK */
+.mainSinStock .tituloSinStock {
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+}
+.mainSinStock .sectionSinStock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainSinStock .sectionSinStock .articleSinStock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 77vh;
+}
+.mainSinStock .sectionSinStock .articleSinStock .enlaceSinStock .fotoSinStock {
+  margin: 2vh;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px 1px black;
+  width: 35vh;
+}
+.mainSinStock .sectionSinStock .articleSinStock .enlaceSinStock .fotoSinStock:hover {
+  transform: scale(1.05);
+  transition: 0.7s;
+}
+.mainSinStock .sectionSinStock .articleSinStock .enlaceSinStock .fotoSinStock:not(hover) {
+  transform: scale(1);
+  transition: 0.7s;
+}
+.mainSinStock .sectionSinStock .articleSinStock .subTituloSinStock {
+  text-align: center;
+  margin: 1vh;
+  width: 80vw;
+}
+
+/* ESTILOS NOSOTROS */
+.mainNosotros .sectionNosotros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mainNosotros .sectionNosotros .mapaVete {
+  padding-bottom: 4vh;
+  justify-self: center;
+}
+.mainNosotros .sectionNosotros .imagenNosotros {
+  max-width: 40vh;
+  margin-top: 4vh;
+}
+.mainNosotros .sectionNosotros .subTituloNosotros {
+  text-align: center;
+  margin: 1vh;
+}
+.mainNosotros .sectionNosotros ul {
+  margin-bottom: 3vh;
+  padding: 0;
+}
+.mainNosotros .sectionNosotros a img {
+  margin: 0 0 2vh 0;
+  width: 6vh;
+}
+
+/* ESTILOS CARRITO */
+.mainCarrito .tituloCarrito {
+  text-align: center;
+  padding: 3vh;
+  margin: 0;
+}
+.mainCarrito .sectionCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 75%;
+}
+.mainCarrito .sectionCarrito .articleCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 77vh;
+}
+.mainCarrito .sectionCarrito .articleCarrito .enlaceCarrito .fotoCarrito {
+  margin: 2vh;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px 1px black;
+  width: 35vh;
+}
+.mainCarrito .sectionCarrito .articleCarrito .enlaceCarrito .fotoCarrito:hover {
+  transform: scale(1.05);
+  transition: 0.7s;
+}
+.mainCarrito .sectionCarrito .articleCarrito .enlaceCarrito .fotoCarrito:not(hover) {
+  transform: scale(1);
+  transition: 0.7s;
+}
+.mainCarrito .sectionCarrito .articleCarrito .subTituloCarrito {
+  text-align: center;
+  margin: 1vh;
+  width: 80vw;
+}
+.mainCarrito .sectionCarrito .articleCarritoLleno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 15vh;
+}
+.mainCarrito .sectionCarrito .articleCarritoLleno ul {
+  text-align: left;
+}
+.mainCarrito .sectionCarrito .articleCarritoLleno ul .botonCarrito {
+  border-color: black;
+  margin-top: 20px;
+}
+.mainCarrito .sectionCarrito .articleCarritoLleno ul .botonCarrito:hover {
+  background-color: #dbbfe7;
+}
+
+/* TABLET LANDSCAPE */
+@media screen and (min-width: 740px) {
+  /* NAV */
+  nav .divNav {
+    padding: 0 20vw;
+  }
+  nav .divNav #navbarNav {
+    justify-content: right;
+  }
+  /* INICIO */
+  .mainInicio .sectionInicio .parrafoInicio {
+    max-width: 45vw;
+  }
+  /* SERVICIOS */
+  .mainServicios .sectionServicios .articleServicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 40vh;
+    width: 40vw;
+    gap: 3vh;
+  }
+  /* CATEGORIAS */
+  .mainCategorias {
+    justify-items: center;
+  }
+  .mainCategorias .sectionCategorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mainCategorias .sectionCategorias .articleCategorias {
+    height: 45vh;
+    width: 27vw;
+    gap: 1vh;
+    margin-bottom: 1vh;
+  }
+  .mainCategorias .sectionCategorias .articleCategorias .linkCategorias .fotoCategorias {
+    max-width: 20vw;
+  }
+  /* PRODUCTOS */
+  .mainProductos .sectionProductos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 10vw;
+  }
+  .mainProductos .sectionProductos .tituloProductos {
+    min-width: 40vw;
+  }
+  .mainProductos .sectionProductos .fotoProductos {
+    max-width: 25vh;
+  }
+  .mainProductos .sectionProductos .articleProductos {
+    height: 50vh;
+    width: 25vw;
+    gap: 1vh;
+    padding-bottom: 1vh;
+  }
+  .mainProductos .sectionProductos .articleProductos .subTituloProductos {
+    max-width: 30vw;
+  }
+  /* CARRITO */
+  .mainCarrito .sectionCarrito {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 10vw;
+  }
+  .mainCarrito .sectionCarrito .articleCarrito {
+    height: 50vh;
+    width: 25vw;
+    gap: 1vh;
+    padding-bottom: 1vh;
+  }
+}
+/* DESKTOP */
+@media screen and (min-width: 1200px) {
+  .mainInicio {
+    background-size: 110vw auto;
+    background-position-y: -20vh;
+  }
+  /* PRODUCTOS */
+  .mainProductos .sectionProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 3vh;
+    max-width: 75vw;
+  }
+  .mainProductos .sectionProductos .tituloProductos {
+    min-width: 40vw;
+  }
+  .mainProductos .sectionProductos .fotoProductos {
+    max-width: 25vh;
+  }
+  .mainProductos .sectionProductos .articleProductos {
+    height: auto;
+    width: 25vw;
+    gap: 1vh;
+    margin-bottom: 1vh;
+  }
+  .mainProductos .sectionProductos .articleProductos .subTituloProductos {
+    max-width: 20vw;
+  }
+  /* CARRITO */
+  .mainCarrito .sectionCarrito {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 3vh;
+    max-width: 75vw;
+    min-height: 800px;
+  }
+  .mainCarrito .sectionCarrito .articleCarrito {
+    height: auto;
+    width: 25vw;
+    gap: 1vh;
+    margin-bottom: 1vh;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
