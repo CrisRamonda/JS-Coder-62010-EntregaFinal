@@ -1,9 +1,6 @@
 // SE TRAE EL NODO PARA INCLUIR LOS PRODUCTOS
 const nodoSectionProductos = document.querySelector('#idProductos')
 
-console.log(productos)
-
-// NUEVO
 // FUNCION LISTAR PRODUCTOS - RENDERIZADO DE PRODUCTOS
 const listarProductos = (datos) => {
     datos.forEach(producto => {
@@ -24,6 +21,8 @@ const listarProductos = (datos) => {
                                 `
         nodoSectionProductos.appendChild(tarjetaProducto)
     })
+
+    // EVENTO PARA FN AGREGARPRODUCTO
     const botonAgregar = document.querySelectorAll('.botonProductos')
     botonAgregar.forEach(boton => {
         boton.addEventListener('click', (e) =>  {
@@ -32,26 +31,59 @@ const listarProductos = (datos) => {
     })
 }
 
-listarProductos(productos)
+// DECLARAMOS LA LISTA DE PRODUCTOS QUE USAMOS PARA LA FUNCION DE AGREGAR
+let productos = []
+
+// EXCEPCION PARA LEER EL JSON, EJECUTAR LISTARPRODUCTOS (DOM)
+const llamadoAJson = async () => {
+    try {
+        const respuesta = await fetch('../js/productos.json')
+        if (!respuesta.ok) {
+            throw new Error('Error al encontrar el JSON')
+        }
+
+        productos = await respuesta.json()
+        listarProductos(productos)
+
+        console.log('Todos los productos:', productos)
+        console.log(respuesta.status) //200
+
+    } catch (error) {
+        console.error('Error Misterioso:', error)
+    }
+}
+
+llamadoAJson()
 
 // FUNCION PARA AGREGAR ELEMENTOS AL CARRITO
-const carrito = []
+let carrito = []
+let checkCarrito = localStorage.getItem('carrito','')
+
+// SI ALGO EN LOCAL STORAGE, REEMPLAZA VARIABLE PARSEANDO LOS DATOS
+if(checkCarrito || null) {
+    console.log('Check carrito:', checkCarrito)
+    carrito = JSON.parse(checkCarrito)
+}
 
 function agregarProducto(id){
     let productoElegido = productos.find(prod => prod.id === parseInt(id))
-    console.log(productoElegido);
-    const agregado = carrito.some(prod => prod.id === parseInt(id))
+
+    const agregado = carrito.some(prod => prod.id === parseInt(id)) // F o T
 
     if(agregado){
-        carrito.map(prod => prod.cantidad++)
+        let productoCarrito = carrito.find(prod => prod.id === parseInt(id))
+        productoCarrito.cantidad++
     } else {
         carrito.push(productoElegido)
     }
-    
-    console.log(carrito);
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    console.log('Carrito:', carrito);
 }
 
 
+
+// console.log(JSON.stringify(productos))
 
 //VIEJO
 // // HTML PARA INCLUIR PRODUCTOS

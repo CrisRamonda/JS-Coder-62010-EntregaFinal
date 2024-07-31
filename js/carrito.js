@@ -1,6 +1,3 @@
-
-
-
 // HTML PARA CARRITO
 const nodoSectionCarrito = document.getElementById('idSectionCarrito')
 
