@@ -55,15 +55,17 @@ const llamadoAJson = async () => {
 
 llamadoAJson()
 
-// FUNCION PARA AGREGAR ELEMENTOS AL CARRITO
+// FUNCION PARA AGREGAR ELEMENTOS AL CARRITO 
 let carrito = []
 let checkCarrito = localStorage.getItem('carrito','')
 
 // SI ALGO EN LOCAL STORAGE, REEMPLAZA VARIABLE PARSEANDO LOS DATOS
-if(checkCarrito || null) {
+if(checkCarrito != null) {
     console.log('Check carrito:', checkCarrito)
     carrito = JSON.parse(checkCarrito)
 }
+
+
 
 function agregarProducto(id){
     let productoElegido = productos.find(prod => prod.id === parseInt(id))
@@ -78,7 +80,7 @@ function agregarProducto(id){
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
-    console.log('Carrito:', carrito);
+    console.log('Carrito:', carrito)
 }
 
 

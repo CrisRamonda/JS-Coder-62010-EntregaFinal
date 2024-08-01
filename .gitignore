@@ -1,6 +1,11 @@
 #Carpeta VsCode
 /.vscode/
 
+#Carpeta NodeModules
+/node_modules/
+package-lock.json
+package.json
+
 #Carpeta SCSS
 /scss/
 
