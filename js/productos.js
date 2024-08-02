@@ -79,64 +79,14 @@ function agregarProducto(id){
         carrito.push(productoElegido)
     }
 
+    Swal.fire({
+        title: 'Producto agregado',
+        text: `${productoElegido.marca} ${productoElegido.tipo} ${productoElegido.kg} Kgs`,
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,})
+
     localStorage.setItem('carrito', JSON.stringify(carrito))
     console.log('Carrito:', carrito)
 }
-
-
-
-// console.log(JSON.stringify(productos))
-
-//VIEJO
-// // HTML PARA INCLUIR PRODUCTOS
-// productos.forEach(prod => {
-//     nodoSectionProductos.innerHTML += `
-//         <article id="idProducto" class="articleProductos">
-            // <!-- IMAGEN DEL PRODUCTO -->
-            // <img class="fotoProductos"  src="../images/ProductoAlimentoPerro.jpg" alt="IMAGEN DE ALIMENTO DE PERRO EN UN PLATO, JUNTO A UNA PATA DE PERRO">
-            // <h3 class="subTituloProductos">
-            //     Balanceado ${prod.marca} ${prod.kg}kg
-            // </h3>
-            // <ul>
-            //     <li>${prod.marca}</li>
-            //     <li>${prod.tipo}</li>
-            //     <li>$${prod.precio}</li>
-            //     <button id="${prod.id}" class="btn botonProductos">AGREGAR</button>
-            // </ul>
-//         </article>
-//     `
-// })
-
-// const nodoProducto = Array.from(document.getElementsByClassName('articleProductos'))
-// const nodoBoton = document.getElementById('idBotonProductos')
-
-// // AGREGAR PRODUCTO 
-// let carrito = []
-// let carritoLocalStorage = JSON.parse(localStorage.getItem("carrito"))
-
-// const botonesAgregar = document.querySelectorAll('.botonProductos')
-// botonesAgregar.forEach(prod => prod.addEventListener('click', agregarProducto))
-
-// function agregarProducto(e) {
-//     if(carritoLocalStorage){
-//         carrito = carritoLocalStorage;
-//     }
-
-//     let id = 0
-//     let marca = e.target.parentNode.children[0].innerText
-//     let tipo = e.target.parentNode.children[1].innerText
-//     let precio = e.target.parentNode.children[2].innerText
-    
-//     productoAgregar = {
-//         idCarrito: id,
-//         marcaCarrito: marca,
-//         tipoCarrito: tipo,
-//         precioCarrito: precio,
-//     }
-
-//     carrito.push(productoAgregar)
-//     localStorage.setItem("carrito", JSON.stringify(carrito));
-
-// }
-
 

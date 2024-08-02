@@ -74,33 +74,42 @@ if(checkCarrito != null) {
 
 // FUNCION ELIMINAR PRODUCTO
 const eliminarProducto = (id) => {
-    const indiceAEliminar = carrito.findIndex(prod => prod.id == id)
-    console.log('carrito antes', carrito)
-
-    carrito.splice(indiceAEliminar)    
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-    console.log('Carrito Dps:', carrito)
-    console.log('Carrito lenght', carrito.length)
+    const productoAEliminar = carrito.find(prod => prod.id == id);
     
-    if(carrito.length == 0) {
-        localStorage.clear()
-    }
-    location.reload()
-}
-
-//////EJEMPLO (BORRAR)
-function agregarProducto(id){
-    let productoElegido = productos.find(prod => prod.id === parseInt(id))
-
-    const agregado = carrito.some(prod => prod.id === parseInt(id)) // F o T
-
-    if(agregado){
-        let productoCarrito = carrito.find(prod => prod.id === parseInt(id))
-        productoCarrito.cantidad++
-    } else {
-        carrito.push(productoElegido)
-    }
-
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-    console.log('Carrito:', carrito)
+    Swal.fire({
+        title: '¿Estás seguro?',
+        html: `
+            <p>¿Quieres eliminar este producto del carrito?</p>
+            <strong>${productoAEliminar.marca} ${productoAEliminar.kg}kg</strong>
+            <p>Cantidad: ${productoAEliminar.cantidad}</p>
+            <p>Precio: $${productoAEliminar.precio * productoAEliminar.cantidad}</p>
+        `,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const indiceAEliminar = carrito.findIndex(prod => prod.id == id);
+            carrito.splice(indiceAEliminar, 1);    
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            
+            if(carrito.length == 0) {
+                localStorage.clear();
+            }
+            
+            Swal.fire({
+                title: 'Producto eliminado',
+                text: `${productoAEliminar.cantidad} x ${productoAEliminar.marca} ${productoAEliminar.kg} Kgs`,
+                confirm: false,
+                timer: 1500,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).then(() => {
+                location.reload();
+            });
+        }
+    });
 }
