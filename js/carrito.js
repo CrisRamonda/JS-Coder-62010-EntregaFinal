@@ -20,7 +20,8 @@ function totalCarrito(datos) {
 const listarCarrito = (datos) => {
     datos.forEach(producto => {
         const tarjetaProdCarrito = document.createElement('article')
-        tarjetaProdCarrito.setAttribute('idProdCarrito', 'articleCarrito')
+        tarjetaProdCarrito.setAttribute('id','idProdCarrito')
+        tarjetaProdCarrito.setAttribute('class','articleCarrito')
         tarjetaProdCarrito.innerHTML =`
                                 <!-- IMAGEN DEL PRODUCTO -->
                                 <img class="fotoCarrito"  src="../images/Carrito.jpg" alt="IMAGEN DE PERRO CON UN CARRITO PEQUEÑO">

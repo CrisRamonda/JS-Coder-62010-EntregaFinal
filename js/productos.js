@@ -5,7 +5,8 @@ const nodoSectionProductos = document.querySelector('#idProductos')
 const listarProductos = (datos) => {
     datos.forEach(producto => {
         const tarjetaProducto = document.createElement('article')
-        tarjetaProducto.setAttribute('idProducto', 'articleProductos')
+        tarjetaProducto.setAttribute('id', 'idProducto')
+        tarjetaProducto.setAttribute('class', 'articleProductos')
         tarjetaProducto.innerHTML =`
                                 <!-- IMAGEN DEL PRODUCTO -->
                                 <img class="fotoProductos"  src="../images/ProductoAlimentoPerro.jpg" alt="IMAGEN DE ALIMENTO DE PERRO EN UN PLATO, JUNTO A UNA PATA DE PERRO">
@@ -82,7 +83,7 @@ function agregarProducto(id){
     Swal.fire({
         title: 'Producto agregado',
         text: `${productoElegido.marca} ${productoElegido.tipo} ${productoElegido.kg} Kgs`,
-        showConfirmButton: false,
+        showConfirmButton: false, 
         timer: 1500,
         timerProgressBar: true,})
 
